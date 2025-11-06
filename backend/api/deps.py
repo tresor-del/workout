@@ -29,7 +29,7 @@ def get_db():
 
 db_dependency = Annotated[Session, Depends(get_db)]
 
-bcrypt_context = CryptContext(schemes=["argon2", "bcrypt"], deprecated="auto")
+bcrypt_context = CryptContext(schemes=["argon2"], deprecated="auto")
 oauth2_bearer = OAuth2PasswordBearer(tokenUrl="auth/token")
 
 oauth2_bearer_dependency = Annotated[str, Depends(oauth2_bearer)]
