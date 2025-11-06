@@ -28,7 +28,7 @@ const Home = () => {
                   axios.get('http://localhost:8000/workouts/workouts', {
                       headers: { Authorization: `Bearer ${token}` },
                   }),
-                  axios.get('http://localhost:8080/routines/routines', {
+                  axios.get('http://localhost:8000/routines/routines', {
                       headers: { Authorization: `Bearer ${token}` },
                   }),
               ]);
@@ -67,7 +67,7 @@ const Home = () => {
       try {
           // Récupération du token ici pour l'appel API
           const token = localStorage.getItem('token');
-          const response = await axios.post('http://localhost:8080/routines', {
+          const response = await axios.post('http://localhost:8000/routines', {
               name: routineName,
               description: routineDescription,
               workouts: selectedWorkouts,
